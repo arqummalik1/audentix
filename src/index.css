@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+
+  /* Cursor glow effect - desktop only */
+  @media (min-width: 1024px) {
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    body:hover::before {
+      opacity: 1;
+    }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/70 dark:bg-gray-800/70 border border-white/20;
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
