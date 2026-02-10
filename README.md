@@ -312,4 +312,4 @@ The site is ready for deployment and will provide an excellent showcase for Qubi
 
 ## 📄 License
 
-© 2024 Qubitt Technologies. All rights reserved.
+© 2026 Qubitt Technologies. All rights reserved.
