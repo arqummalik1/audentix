@@ -1,10 +1,11 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Calendar, MessageSquare } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import { PopupModal } from 'react-calendly';
 
 /**
  * CTA - Final Call to Action section
@@ -21,6 +22,22 @@ import { cn } from '@/lib/utils';
 export function CTA({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const calendlyUrl = 'https://calendly.com/arqummalik1';
+
+  const handleScheduleClick = () => {
+    try {
+      setError(null);
+      setIsOpen(true);
+    } catch (err) {
+      console.error('Failed to open Calendly modal:', err);
+      setError('Failed to open scheduling modal. Please try again.');
+      // Fallback: open in new tab
+      window.open(calendlyUrl, '_blank');
+    }
+  };
 
   return (
     <section 
@@ -112,6 +129,7 @@ export function CTA({ className }: { className?: string }) {
                 size="lg"
                 icon={<ArrowRight />}
                 iconPosition="right"
+                onClick={handleScheduleClick}
               >
                 Get a Free Consultation
               </Button>
@@ -120,9 +138,14 @@ export function CTA({ className }: { className?: string }) {
                 variant="secondary" 
                 size="lg"
                 icon={<Calendar />}
+                onClick={handleScheduleClick}
               >
                 Schedule a Call
               </Button>
+              
+              {error && (
+                <p className="text-red-500 text-sm mt-2">{error}</p>
+              )}
             </motion.div>
 
             {/* Trust indicators */}
@@ -149,6 +172,13 @@ export function CTA({ className }: { className?: string }) {
           </motion.div>
         </GlassCard>
       </Container>
+
+      <PopupModal
+        url={calendlyUrl}
+        onModalClose={() => setIsOpen(false)}
+        open={isOpen}
+        rootElement={document.getElementById("root") || document.body}
+      />
     </section>
   );
 }

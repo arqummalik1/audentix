@@ -18,6 +18,7 @@ import { PremiumLoader } from '@/components/ui/ReverseLoader';
 // Lazy load pages
 const SinglePost = lazy(() => import('@/pages/SinglePost'));
 const Products = lazy(() => import('@/pages/Products'));
+const NotFound = lazy(() => import('@/pages/NotFound'));
 
 function HomePage() {
   return (
@@ -94,6 +95,17 @@ function App() {
               }>
                 <Navbar />
                 <Products />
+                <Footer />
+              </Suspense>
+            } />
+            <Route path="*" element={
+              <Suspense fallback={
+                <div className="min-h-screen flex items-center justify-center">
+                  <div className="w-8 h-8 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" />
+                </div>
+              }>
+                <Navbar />
+                <NotFound />
                 <Footer />
               </Suspense>
             } />
