@@ -48,10 +48,10 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--cyan)] flex items-center justify-center text-white font-bold text-xl">
-                Q
+                A
               </div>
               <span className="text-xl font-display font-bold text-[var(--text-primary)]">
-                Qubit
+                Audentix
               </span>
             </div>
             <p className="text-[var(--text-secondary)] text-sm mb-6 leading-relaxed">
@@ -136,7 +136,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[var(--text-muted)] text-sm">
-            © {currentYear} Qubit Technologies. All rights reserved.
+            © {currentYear} Audentix. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm">

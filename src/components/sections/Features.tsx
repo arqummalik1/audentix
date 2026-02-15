@@ -600,7 +600,7 @@ export function Features({ features = defaultFeatures, className }: FeaturesProp
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-            Why Choose <span className="gradient-text">Qubit</span>
+            Why Choose <span className="gradient-text">Audentix</span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
             We don't just build software. We craft solutions that drive business growth, 

@@ -61,8 +61,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary: cn(
-        'bg-[var(--accent)] text-white',
-        'hover:bg-[var(--accent-hover)]',
+        'bg-[var(--surface)] border border-[var(--border)]',
+        'gradient-text-shimmer',
+        'hover:border-[var(--accent)]',
         'hover:shadow-glow',
         'active:scale-[0.98]',
       ),

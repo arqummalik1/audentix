@@ -1,8 +1,8 @@
-# Qubitt Technologies — Executive Tech Elegance Implementation Plan
+# Audentix Technologies — Executive Tech Elegance Implementation Plan
 
 ## Executive Summary
 
-This document outlines the implementation plan for transforming the existing Qubit Technologies website into a polished tech-forward design that combines refined glassmorphism, cinematic 3D depth, and flawless dual-theme support.
+This document outlines the implementation plan for transforming the existing Audentix Technologies website into a polished tech-forward design that combines refined glassmorphism, cinematic 3D depth, and flawless dual-theme support.
 
 ---
 

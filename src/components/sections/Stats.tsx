@@ -19,9 +19,9 @@ interface StatsProps {
 }
 
 const defaultStats: StatItem[] = [
-  { value: 150, suffix: '+', label: 'Projects Delivered', description: 'Successful project completions' },
+  { value: 50, suffix: '+', label: 'Projects Delivered', description: 'Successful project completions' },
   { value: 98, suffix: '%', label: 'Client Satisfaction', description: 'Return clients' },
-  { value: 12, suffix: '+', label: 'Years Experience', description: 'Industry expertise' },
+  { value: 4, suffix: '+', label: 'Years Experience', description: 'Industry expertise' },
   { value: 24, suffix: '/7', label: 'Support Available', description: 'Round-the-clock assistance' },
 ];
 

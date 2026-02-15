@@ -1,6 +1,6 @@
-# Qubitt Technologies Website
+# Audentix Technologies Website
 
-> A premium, production-ready React + TypeScript website for Qubitt Technologies - a custom software development company
+> A premium, production-ready React + TypeScript website for Audentix Technologies - a custom software development company
 
 ![Status](https://img.shields.io/badge/status-production--ready-success)
 ![React](https://img.shields.io/badge/React-18-blue)
@@ -96,7 +96,7 @@ src/
 5. **UI/UX Design** - Figma to pixel perfect
 6. **Full Solutions** - Hosting, SEO, maintenance
 
-**Features Highlight - "Why Choose Qubitt":**
+**Features Highlight - "Why Choose Audentix":**
 - **AI-First** - Chatbots, assistants, automation pipelines
 - **SaaS Ready** - Auth, payments, dashboards, analytics
 - **Performance** - Lighthouse 95+, code-splitting, lazy loading
@@ -139,7 +139,7 @@ src/
 **Left Column:**
 - Headline: "Let's Build Something Amazing Together"
 - Contact info with colored icons:
-  - 📧 Email: hello@qubitt.tech (blue)
+  - 📧 Email: hello@audentix.com (blue)
   - 📞 Phone: +1 (555) 123-4567 (purple)
   - 📍 Location: San Francisco, CA (cyan)
 - Social links (LinkedIn, Twitter, GitHub)
@@ -152,7 +152,7 @@ src/
 
 ### 8. Footer
 - ✅ 4-column layout: Logo, Services, Company, Social
-- ✅ Copyright © 2024 Qubitt Technologies
+- ✅ Copyright © 2024 Audentix Technologies
 - ✅ Privacy Policy and Terms links
 - ✅ Dark background (gray-900)
 
@@ -300,7 +300,7 @@ npm run preview
 
 ## 🎉 Conclusion
 
-The Qubitt Technologies website is complete and fully functional. It delivers a premium, modern experience with:
+The Audentix Technologies website is complete and fully functional. It delivers a premium, modern experience with:
 
 - ✨ Beautiful design and smooth animations
 - 🌓 Full dark mode support
@@ -308,8 +308,8 @@ The Qubitt Technologies website is complete and fully functional. It delivers a 
 - 🎯 All requested features and sections
 - 🚀 Production-ready code quality
 
-The site is ready for deployment and will provide an excellent showcase for Qubitt Technologies' services.
+The site is ready for deployment and will provide an excellent showcase for Audentix Technologies' services.
 
 ## 📄 License
 
-© 2026 Qubitt Technologies. All rights reserved.
+© 2026 Audentix Technologies. All rights reserved.

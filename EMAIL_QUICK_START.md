@@ -14,7 +14,7 @@
 
 ### 1. Set Up EmailJS (10 minutes)
 
-Follow the complete guide: [`EMAILJS_SETUP.md`](file:///Users/arqummalik/Software%20Development/vibe%20code/qubit-v1/EMAILJS_SETUP.md)
+Follow the complete guide: [`EMAILJS_SETUP.md`](file:///Users/arqummalik/Software%20Development/vibe%20code/audentix/EMAILJS_SETUP.md)
 
 **Quick Steps:**
 1. Create account at https://www.emailjs.com/
@@ -28,7 +28,7 @@ Follow the complete guide: [`EMAILJS_SETUP.md`](file:///Users/arqummalik/Softwar
 
 ### 2. Update .env File
 
-Open: `/Users/arqummalik/Software Development/vibe code/qubit-v1/.env`
+Open: `/Users/arqummalik/Software Development/vibe code/audentix/.env`
 
 Replace these placeholder values with your actual EmailJS credentials:
 
@@ -64,13 +64,13 @@ VITE_EMAILJS_PUBLIC_KEY=your_actual_public_key
    - Personalized greeting
    - Confirmation of their inquiry
    - What to expect next
-   - Professional Qubitt branding
+   - Professional Audentix branding
 
 ---
 
 ## Need Help?
 
-See the full guide: [`EMAILJS_SETUP.md`](file:///Users/arqummalik/Software%20Development/vibe%20code/qubit-v1/EMAILJS_SETUP.md)
+See the full guide: [`EMAILJS_SETUP.md`](file:///Users/arqummalik/Software%20Development/vibe%20code/audentix/EMAILJS_SETUP.md)
 
 It includes:
 - Step-by-step screenshots

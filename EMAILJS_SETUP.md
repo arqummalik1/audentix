@@ -1,4 +1,4 @@
-# EmailJS Setup Guide for Qubitt Technologies Contact Form
+# EmailJS Setup Guide for Audentix Technologies Contact Form
 
 This guide will walk you through setting up EmailJS to enable dual email functionality for your contact form.
 
@@ -56,12 +56,12 @@ arqummalik1@gmail.com
 
 **From Name:**
 ```
-Qubitt Contact Form
+Audentix Contact Form
 ```
 
 **From Email:**
 ```
-noreply@qubitt.tech
+noreply@audentix.com
 ```
 
 **Subject:**
@@ -120,7 +120,7 @@ This template sends a thank you email to **the customer**.
 
 **From Name:**
 ```
-Qubitt Technologies
+Audentix Technologies
 ```
 
 **From Email:**
@@ -130,7 +130,7 @@ arqummalik1@gmail.com
 
 **Subject:**
 ```
-Thank You for Reaching Out - Qubitt Technologies
+Thank You for Reaching Out - Audentix Technologies
 ```
 
 **Content (HTML):**
@@ -139,13 +139,13 @@ Thank You for Reaching Out - Qubitt Technologies
     <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <!-- Header with gradient -->
         <div style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">Qubitt Technologies</h1>
+            <h1 style="color: white; margin: 0; font-size: 28px;">Audentix Technologies</h1>
         </div>
         
         <h2 style="color: #1F2937; margin-bottom: 20px;">Hi {{from_name}},</h2>
         
         <p style="color: #4B5563; line-height: 1.6; margin-bottom: 15px;">
-            Thank you for contacting <strong>Qubitt Technologies</strong>! We're excited about the opportunity to work together.
+            Thank you for contacting <strong>Audentix Technologies</strong>! We're excited about the opportunity to work together.
         </p>
         
         <p style="color: #4B5563; line-height: 1.6; margin-bottom: 15px;">
@@ -168,7 +168,7 @@ Thank You for Reaching Out - Qubitt Technologies
         
         <p style="color: #4B5563; line-height: 1.6; margin-bottom: 5px;">
             Best regards,<br>
-            <strong>The Qubitt Technologies Team</strong>
+            <strong>The Audentix Technologies Team</strong>
         </p>
         
         <!-- Footer -->
@@ -202,7 +202,7 @@ Thank You for Reaching Out - Qubitt Technologies
 
 ### Step 6: Update .env File
 
-1. Open the file: `/Users/arqummalik/Software Development/vibe code/qubit-v1/.env`
+1. Open the file: `/Users/arqummalik/Software Development/vibe code/audentix/.env`
 2. Replace the placeholder values with your actual values:
 
 ```env
@@ -247,8 +247,8 @@ VITE_EMAILJS_PUBLIC_KEY=user_ghi3456
 - **Includes**: Name, Email, Phone, Company, Service, Message, Timestamp
 
 ### Customer Email
-- **Subject**: "Thank You for Reaching Out - Qubitt Technologies"
-- **Content**: Personalized thank you message with Qubitt branding
+- **Subject**: "Thank You for Reaching Out - Audentix Technologies"
+- **Content**: Personalized thank you message with Audentix branding
 - **Includes**: Customer name, service they're interested in, what to expect next
 
 ---

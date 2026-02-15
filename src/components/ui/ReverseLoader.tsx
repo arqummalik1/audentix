@@ -54,7 +54,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                         {particles.map((particle) => (
                             <motion.div
                                 key={particle.id}
-                                className="absolute w-1 h-1 bg-blue-400 rounded-full"
+                                className="absolute w-1 h-1 bg-[var(--accent)] rounded-full"
                                 initial={{
                                     x: `${particle.x}%`,
                                     y: `${particle.y}%`,
@@ -77,7 +77,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                     </div>
 
                     {/* Radial gradient glow */}
-                    <div className="absolute inset-0 bg-gradient-radial from-blue-500/10 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-radial from-[var(--accent-glow)] via-transparent to-transparent" />
 
                     {/* Main content container */}
                     <div className="relative z-10 text-center px-4">
@@ -99,7 +99,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                             <div className="relative inline-block">
                                 {/* Glow effect behind logo */}
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-50"
+                                    className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--cyan)] rounded-3xl blur-2xl opacity-50"
                                     animate={{
                                         scale: [1, 1.2, 1],
                                         opacity: [0.5, 0.7, 0.5],
@@ -113,7 +113,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
 
                                 {/* Logo */}
                                 <motion.div
-                                    className="relative w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg"
+                                    className="relative w-10 h-10 bg-gradient-to-br from-[var(--accent)] to-[var(--cyan)] rounded-xl flex items-center justify-center shadow-lg"
                                     animate={{
                                         rotateY: [0, 360],
                                     }}
@@ -126,7 +126,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                                         transformStyle: 'preserve-3d',
                                     }}
                                 >
-                                    <span className="text-white font-bold text-lg">Q</span>
+                                    <span className="text-white font-bold text-lg">A</span>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -138,7 +138,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                             transition={{ duration: 0.8, delay: 0.5 }}
                             className="text-xl font-bold text-white mb-1 tracking-wider"
                         >
-                            QUBIT
+                            AUDENTIX
                         </motion.h1>
 
                         <motion.p
@@ -156,7 +156,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
                             <motion.div
                                 className="mb-6 relative"
                             >
-                                <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                                <div className="text-4xl font-bold bg-gradient-to-r from-[var(--accent)] to-[var(--cyan)] bg-clip-text text-transparent">
                                     {progress}
                                     <span className="text-2xl">%</span>
                                 </div>
@@ -179,7 +179,7 @@ export function PremiumLoader({ onComplete }: LoaderProps) {
 
                                 {/* Actual progress */}
                                 <motion.div
-                                    className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 relative overflow-hidden"
+                                    className="h-full bg-gradient-to-r from-[var(--accent)] to-[var(--cyan)] relative overflow-hidden"
                                     initial={{ width: '100%' }}
                                     animate={{ width: `${progress}%` }}
                                     transition={{

@@ -20,8 +20,8 @@ export function RainbowBorderButton({
       onClick={onClick}
       className={cn(
         "rainbow-border-btn relative inline-flex items-center justify-center gap-2",
-        "px-5 py-2.5 rounded-xl font-semibold",
-        "text-white transition-all duration-200 cursor-pointer",
+        "px-6 py-3 rounded-xl font-bold text-lg text-white",
+        "transition-all duration-200 cursor-pointer",
         "hover:scale-[1.02] active:scale-[0.98]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2",
         className

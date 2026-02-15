@@ -1,8 +1,8 @@
-# Mobile Optimization Plan for Qubitt Technologies
+# Mobile Optimization Plan for Audentix Technologies
 
 ## Executive Summary
 
-This comprehensive mobile-optimization plan addresses the mobile UX issues identified on qubitt.in. The project already has a solid foundation with Tailwind CSS, Framer Motion animations, and proper viewport meta tags. However, several areas need improvement to deliver a polished mobile experience.
+This comprehensive mobile-optimization plan addresses the mobile UX issues identified on audentix.com. The project already has a solid foundation with Tailwind CSS, Framer Motion animations, and proper viewport meta tags. However, several areas need improvement to deliver a polished mobile experience.
 
 ---
 
@@ -563,7 +563,7 @@ export function useIsMobile(breakpoint = 768) {
 
 ## 16. Conclusion
 
-This plan provides a comprehensive roadmap for optimizing qubitt.in for mobile devices. The key focus areas are:
+This plan provides a comprehensive roadmap for optimizing audentix.com for mobile devices. The key focus areas are:
 
 1. **Performance**: Reduce Hero section complexity on mobile
 2. **Touch UX**: Ensure all interactive elements meet 48px minimum
@@ -574,5 +574,5 @@ The existing codebase has a strong foundation. With these optimizations, the sit
 
 ---
 
-*Plan created for qubitt.in mobile optimization project*
+*Plan created for audentix.com mobile optimization project*
 *Last updated: February 2026*

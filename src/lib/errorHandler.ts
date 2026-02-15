@@ -1,5 +1,5 @@
 /**
- * Global Error Handler for Qubitt Technologies
+ * Global Error Handler for Audentix
  * Handles uncaught errors and unhandled promise rejections
  */
 

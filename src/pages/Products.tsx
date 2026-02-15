@@ -20,7 +20,7 @@ import {
 const products = [
   {
     id: '1',
-    name: 'Qubit Analytics',
+    name: 'Audentix Analytics',
     description: 'AI-powered analytics platform that transforms raw data into actionable insights. Features real-time dashboards, predictive analytics, and custom reporting.',
     category: 'Analytics',
     icon: <BarChart3 className="w-8 h-8" />,
@@ -32,7 +32,7 @@ const products = [
   },
   {
     id: '2',
-    name: 'Qubit Cloud',
+    name: 'Audentix Cloud',
     description: 'Enterprise-grade cloud infrastructure with auto-scaling, CDN integration, and 99.99% uptime guarantee. Built for mission-critical applications.',
     category: 'Cloud Services',
     icon: <Cloud className="w-8 h-8" />,
@@ -44,7 +44,7 @@ const products = [
   },
   {
     id: '3',
-    name: 'Qubit Mobile',
+    name: 'Audentix Mobile',
     description: 'Cross-platform mobile app development framework with native performance. Build once, deploy to iOS and Android simultaneously.',
     category: 'Mobile Apps',
     icon: <Smartphone className="w-8 h-8" />,
@@ -56,7 +56,7 @@ const products = [
   },
   {
     id: '4',
-    name: 'Qubit Secure',
+    name: 'Audentix Secure',
     description: 'Comprehensive cybersecurity solution with AI threat detection, encryption, and compliance management. Protect your business from evolving threats.',
     category: 'Security',
     icon: <Shield className="w-8 h-8" />,
@@ -68,7 +68,7 @@ const products = [
   },
   {
     id: '5',
-    name: 'Qubit Web',
+    name: 'Audentix Web',
     description: 'Modern web application framework built on React and Node.js. Fast, scalable, and SEO-optimized out of the box.',
     category: 'Web Development',
     icon: <Globe className="w-8 h-8" />,
@@ -80,7 +80,7 @@ const products = [
   },
   {
     id: '6',
-    name: 'Qubit API',
+    name: 'Audentix API',
     description: 'Robust API gateway with rate limiting, authentication, and real-time analytics. Connect your services with confidence.',
     category: 'Developer Tools',
     icon: <Zap className="w-8 h-8" />,
@@ -241,7 +241,7 @@ export default function Products() {
           className="mt-20"
         >
           <h2 className="text-3xl font-display font-bold text-center mb-12">
-            Why Choose <span className="text-gradient">Qubit?</span>
+            Why Choose <span className="text-gradient">Audentix?</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

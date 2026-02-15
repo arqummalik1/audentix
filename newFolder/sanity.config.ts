@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'qubitt-blog',
+  title: 'audentix-blog',
 
   projectId: 'mcs70iee',
   dataset: 'production',

@@ -119,10 +119,10 @@ export function Navbar() {
               }}
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--cyan)] flex items-center justify-center text-white font-bold text-xl">
-                Q
+                A
               </div>
               <span className="text-xl md:text-2xl font-display font-bold text-[var(--text-primary)]">
-                Qubit <span className="gradient-text">Technologies</span>
+                Audentix
               </span>
             </div>
 
