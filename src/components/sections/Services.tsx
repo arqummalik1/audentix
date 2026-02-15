@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+ import { useEffect, useRef } from 'react';
 import * as Icons from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { services } from '@/data/services';

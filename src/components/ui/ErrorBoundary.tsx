@@ -1,4 +1,6 @@
 import { Component, ReactNode } from 'react';
+import { motion } from 'framer-motion';
+import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
 
 interface Props {
     children: ReactNode;
@@ -29,6 +31,10 @@ export class ErrorBoundary extends Component<Props, State> {
         window.location.reload();
     };
 
+    handleGoHome = () => {
+        window.location.href = '/';
+    };
+
     render() {
         if (this.state.hasError) {
             if (this.props.fallback) {
@@ -36,38 +42,72 @@ export class ErrorBoundary extends Component<Props, State> {
             }
 
             return (
-                <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 p-4">
-                    <div className="max-w-md w-full text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center">
-                            <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                            </svg>
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            Something went wrong
-                        </h2>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">
-                            An unexpected error occurred. Please try reloading the page.
-                        </p>
-                        <button
-                            onClick={this.handleReload}
-                            className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center p-4 relative overflow-hidden">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-red-500/10 rounded-full blur-[100px]" />
+                        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-orange-500/10 rounded-full blur-[80px]" />
+                        <div 
+                            className="absolute inset-0 opacity-[0.03]"
+                            style={{
+                                backgroundImage: `linear-gradient(var(--text-primary) 1px, transparent 1px),
+                                                 linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)`,
+                                backgroundSize: '60px 60px',
+                            }}
+                        />
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="max-w-md w-full text-center relative z-10"
+                    >
+                        <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                            className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center"
                         >
-                            Reload Page
-                        </button>
+                            <AlertTriangle className="w-12 h-12 text-red-500" />
+                        </motion.div>
+                        
+                        <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-3">
+                            Oops! Something went wrong
+                        </h2>
+                        <p className="text-[var(--text-secondary)] mb-8">
+                            An unexpected error occurred. Don't worry, it's not your fault!
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button
+                                onClick={this.handleReload}
+                                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
+                            >
+                                <RefreshCw className="w-4 h-4" />
+                                Reload Page
+                            </button>
+                            
+                            <button
+                                onClick={this.handleGoHome}
+                                className="px-6 py-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] font-semibold hover:border-[var(--accent)] transition-all flex items-center justify-center gap-2"
+                            >
+                                <Home className="w-4 h-4" />
+                                Go Home
+                            </button>
+                        </div>
+
                         {import.meta.env.DEV && this.state.error && (
-                            <details className="mt-6 text-left">
-                                <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                                    Error Details
+                            <details className="mt-8 text-left">
+                                <summary className="cursor-pointer text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors">
+                                    Error Details (Development Only)
                                 </summary>
-                                <pre className="mt-2 p-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-xs text-red-600 dark:text-red-400 overflow-auto max-h-48">
+                                <pre className="mt-3 p-4 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border)] text-xs text-red-500 overflow-auto max-h-48">
                                     {this.state.error.message}
-                                    {'\n'}
-                                    {this.state.error.stack}
+                                    {'\n'}\n{this.state.error.stack}
                                 </pre>
                             </details>
                         )}
-                    </div>
+                    </motion.div>
                 </div>
             );
         }

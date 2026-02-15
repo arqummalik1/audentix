@@ -32,10 +32,10 @@ export function StickyCTA() {
             </div>
 
             <PopupModal
-                url="https://calendly.com/arqummalik1/new-meeting"
+                url="https://calendly.com/arqummalik1"
                 onModalClose={() => setIsOpen(false)}
                 open={isOpen}
-                rootElement={document.getElementById("root")!}
+                rootElement={document.getElementById("root") || document.body}
             />
         </>
     );
