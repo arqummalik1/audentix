@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-interface SEOProps {
+export interface SEOProps {
   title?: string;
   description?: string;
   canonical?: string;
@@ -13,9 +13,9 @@ const DEFAULT_TITLE = 'Audentix - Premium Software Development';
 const DEFAULT_DESCRIPTION = 'Audentix - Premium custom software development company specializing in AI, SaaS, and enterprise solutions';
 const SITE_URL = 'https://www.audentix.com';
 
-export function SEO({ 
-  title = DEFAULT_TITLE, 
-  description = DEFAULT_DESCRIPTION, 
+export function SEO({
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
   canonical,
   image = '/og-image.png', // Ensure you have a default OG image in public/
   type = 'website',

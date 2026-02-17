@@ -21,6 +21,10 @@ const LazyContact = lazy(() => import('@/components/sections/Contact').then(modu
 const SinglePost = lazy(() => import('@/pages/SinglePost'));
 const Products = lazy(() => import('@/pages/Products'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
+const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const ContactPage = lazy(() => import('@/pages/ContactPage'));
+const BlogPage = lazy(() => import('@/pages/Blog'));
 
 import { SEO } from '@/components/SEO/SEO';
 
@@ -135,6 +139,26 @@ function App() {
                 <Navbar />
                 <Products />
                 <Footer />
+              </Suspense>
+            } />
+            <Route path="/services" element={
+              <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" /></div>}>
+                <ServicesPage />
+              </Suspense>
+            } />
+            <Route path="/about" element={
+              <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" /></div>}>
+                <AboutPage />
+              </Suspense>
+            } />
+            <Route path="/contact" element={
+              <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" /></div>}>
+                <ContactPage />
+              </Suspense>
+            } />
+            <Route path="/blog" element={
+              <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" /></div>}>
+                <BlogPage />
               </Suspense>
             } />
             <Route path="*" element={
