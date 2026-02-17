@@ -4,6 +4,8 @@ import { Home, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/layout/Container';
 
+import { Helmet } from 'react-helmet-async';
+
 export function NotFound() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -21,6 +23,10 @@ export function NotFound() {
 
     return (
         <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center relative overflow-hidden">
+            <Helmet>
+                <title>Page Not Found - Audentix</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -39,9 +45,9 @@ export function NotFound() {
                     transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                     className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[var(--cyan)]/10 rounded-full blur-[80px]"
                 />
-                
+
                 {/* Grid Pattern */}
-                <div 
+                <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
                         backgroundImage: `linear-gradient(var(--text-primary) 1px, transparent 1px),
@@ -94,7 +100,7 @@ export function NotFound() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="text-lg text-[var(--text-secondary)] mb-8"
                     >
-                        Oops! The page you're looking for seems to have wandered off. 
+                        Oops! The page you're looking for seems to have wandered off.
                         Let's get you back on track.
                     </motion.p>
 
@@ -113,7 +119,7 @@ export function NotFound() {
                         >
                             Go Home
                         </Button>
-                        
+
                         <Button
                             variant="secondary"
                             size="lg"

@@ -22,9 +22,34 @@ const SinglePost = lazy(() => import('@/pages/SinglePost'));
 const Products = lazy(() => import('@/pages/Products'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
+import { SEO } from '@/components/SEO/SEO';
+
+import { Schema } from '@/components/SEO/Schema';
+
 function HomePage() {
   return (
     <main>
+      <SEO
+        title="Audentix - Premium Software Development"
+        description="Audentix is a premium custom software development company specializing in AI, SaaS, and enterprise solutions. We build scalable, secure, and beautiful software."
+        keywords="software development, AI, SaaS, enterprise software, web development, mobile apps, specialized software"
+      />
+      <Schema data={{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Audentix",
+        "url": "https://www.audentix.com",
+        "logo": "https://www.audentix.com/faviconLogo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-555-5555", // Placeholder
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://twitter.com/audentix",
+          "https://linkedin.com/company/audentix"
+        ]
+      }} />
       <Hero />
       <Services />
       <TechStack />

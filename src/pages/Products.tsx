@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Star, 
-  Zap, 
-  Shield, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Star,
+  Zap,
+  Shield,
   BarChart3,
   Globe,
   Smartphone,
@@ -94,18 +94,45 @@ const products = [
 
 const categories = ['All', 'Analytics', 'Cloud Services', 'Mobile Apps', 'Security', 'Web Development', 'Developer Tools'];
 
+import { SEO } from '@/components/SEO/SEO';
+import { Schema } from '@/components/SEO/Schema';
+
 export default function Products() {
   const { ref } = useScrollReveal();
   const [activeCategory, setActiveCategory] = useState('All');
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
   void hoveredProduct;
 
-  const filteredProducts = activeCategory === 'All' 
-    ? products 
+  const filteredProducts = activeCategory === 'All'
+    ? products
     : products.filter(p => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 pt-24 pb-16">
+      <SEO
+        title="Products & Solutions"
+        description="Explore Audentix's suite of premium software products including AI analytics, cloud infrastructure, mobile frameworks, and security solutions."
+        keywords="software products, AI analytics, cloud services, mobile app framework, cybersecurity, web development tools"
+      />
+      <Schema data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": products.map((product, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Product",
+            "name": product.name,
+            "description": product.description,
+            "image": product.image,
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "0" // Placeholder for custom pricing
+            }
+          }
+        }))
+      }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -137,11 +164,10 @@ export default function Products() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-[var(--accent)] text-white'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
+                ? 'bg-[var(--accent)] text-white'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                }`}
             >
               {category}
             </button>
@@ -178,11 +204,10 @@ export default function Products() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-4 h-4 ${
-                            i < Math.floor(product.rating)
-                              ? 'fill-yellow-400 text-yellow-400'
-                              : 'fill-gray-300 text-gray-300'
-                          }`}
+                          className={`w-4 h-4 ${i < Math.floor(product.rating)
+                            ? 'fill-yellow-400 text-yellow-400'
+                            : 'fill-gray-300 text-gray-300'
+                            }`}
                         />
                       ))}
                       <span className="ml-1 text-sm text-white/80">
@@ -243,7 +268,7 @@ export default function Products() {
           <h2 className="text-3xl font-display font-bold text-center mb-12">
             Why Choose <span className="text-gradient">Audentix?</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: <Zap className="w-8 h-8" />, title: 'Lightning Fast', desc: 'Optimized performance for seamless user experiences' },

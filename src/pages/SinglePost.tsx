@@ -6,6 +6,8 @@ import { Calendar, User, ArrowLeft, Loader2 } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { BlogComments } from '@/components/blog/BlogComments';
+import { SEO } from '@/components/SEO/SEO';
+import { Schema } from '@/components/SEO/Schema';
 
 const ptComponents = {
     types: {
@@ -145,6 +147,29 @@ export default function SinglePost() {
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500 selection:bg-blue-500/30">
             <Navbar />
+
+            {post && (
+                <>
+                    <SEO
+                        title={post.title}
+                        description={post.title} // Ideally use an excerpt if available
+                        type="article"
+                        image={post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined}
+                    />
+                    <Schema data={{
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "headline": post.title,
+                        "image": post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : [],
+                        "datePublished": post.publishedAt,
+                        "author": [{
+                            "@type": "Person",
+                            "name": post.author?.name || "Audentix",
+                            "url": "https://www.audentix.com"
+                        }]
+                    }} />
+                </>
+            )}
 
             <main className="pt-32 pb-20">
                 <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
