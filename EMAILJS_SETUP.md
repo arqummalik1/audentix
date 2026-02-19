@@ -139,6 +139,12 @@ Thank You for Reaching Out - Audentix Technologies
     <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <!-- Header with gradient -->
         <div style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center;">
+            <!-- 
+                🛑 TO ADD YOUR LOGO:
+                1. Upload your logo to a public site (like your website, Imgur, or GitHub).
+                2. Replace the <h1> line below with this <img> tag:
+                <img src="https://YOUR_PUBLIC_LOGO_URL.png" alt="Audentix" style="max-width: 150px; height: auto;">
+            -->
             <h1 style="color: white; margin: 0; font-size: 28px;">Audentix Technologies</h1>
         </div>
         

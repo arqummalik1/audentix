@@ -59,19 +59,23 @@ export function Contact() {
             };
 
             // 1. Send email to owner (audentix@gmail.com)
-            // Ideally, your Owner Template "To Email" in Dashboard should be: audentix@gmail.com
-            // But we send to_email explicitly just in case your template uses {{to_email}}
-            const ownerParams = {
-                ...commonParams,
-                to_email: 'audentix@gmail.com',
-            };
-
-            await emailjs.send(
-                serviceId,
-                ownerTemplateId,
-                ownerParams,
-                publicKey
-            );
+            console.log('Attempting to send Owner Email...');
+            try {
+                const ownerParams = {
+                    ...commonParams,
+                    to_email: 'audentix@gmail.com',
+                };
+                await emailjs.send(
+                    serviceId,
+                    ownerTemplateId,
+                    ownerParams,
+                    publicKey
+                );
+                console.log('Owner Email sent successfully.');
+            } catch (ownerError) {
+                console.error('FAILED to send Owner Email:', ownerError);
+                throw ownerError; // Re-throw to hit the main error handler
+            }
 
             // 2. Send thank you email to customer
             const customerParams = {
@@ -103,13 +107,18 @@ export function Contact() {
 
         } catch (error) {
             console.error('Email sending failed:', error);
+            // EmailJS specific error logging
+            if (error && typeof error === 'object' && 'text' in error) {
+                console.error('EmailJS Error Details:', (error as any).text);
+            }
 
             // Show error toast
             setToastType('error');
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
             setToastMessage(
-                error instanceof Error && error.message.includes('configuration')
+                errorMessage.includes('configuration')
                     ? 'Email service not configured. Please contact us directly at audentix@gmail.com'
-                    : 'Failed to send message. Please try again or contact us directly at audentix@gmail.com'
+                    : `Failed to send message: ${(error as any)?.text || errorMessage || 'Please try again later'}`
             );
             setShowToast(true);
         } finally {
